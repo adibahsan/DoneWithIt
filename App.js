@@ -4,9 +4,12 @@ import { StyleSheet, Text, View } from "react-native";
 export default function App() {
   console.log("App Executed");
 
+  let x = 1244;
+  x.toString;
+
   return (
     <View style={styles.container}>
-      <Text>Hello From my App</Text>
+      <Text>Hello From my App {x}</Text>
     </View>
   );
 }
