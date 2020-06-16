@@ -18,7 +18,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>
+      <Text numberOfLines={2} style={(styles.colorStyles, redBackgroundStyles)}>
         Culpa irure excepteur sint occaecat consectetur excepteur Lorem
         excepteur fugiat reprehenderit ipsum. Lorem adipisicing fugiat laboris
         enim qui cillum minim mollit nisi qui ea. Nostrud anim fugiat labore ex
@@ -52,6 +52,8 @@ export default function App() {
   );
 }
 
+const redBackgroundStyles = { backgroundColor: "red" };
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -61,7 +63,8 @@ const styles = StyleSheet.create({
   },
 
   colorStyles: {
-    color: "#fff",
+    color: "red",
     textShadowColor: "black",
+    backgroundColor: "pink",
   },
 });
