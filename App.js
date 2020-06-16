@@ -4,9 +4,13 @@ import { StyleSheet, Text, View } from "react-native";
 export default function App() {
   console.log("App Executed");
 
+  const handlePress = () => {
+    console.log("Text is pressed");
+  };
+
   return (
     <View style={styles.container}>
-      <Text numberOfLines={1} style={styles.colorStyles}>
+      <Text numberOfLines={1} onPress={handlePress} style={styles.colorStyles}>
         Ullamco eiusmod laborum ad deserunt amet culpa amet dolor nulla
         consectetur excepteur veniam. Lorem officia deserunt do ipsum Lorem. Eu
         id officia quis consectetur. Pariatur anim fugiat labore minim
@@ -28,5 +32,6 @@ const styles = StyleSheet.create({
 
   colorStyles: {
     color: "#fff",
+    textShadowColor: "black",
   },
 });
