@@ -28,6 +28,7 @@ export default function App() {
       style={{
         backgroundColor: "white",
         flex: 1,
+        flexDirection: "column-reverse",
       }}
     >
       <View
