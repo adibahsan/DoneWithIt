@@ -19,9 +19,37 @@ import {
 
 export default function App() {
   const deviceOrientation = useDeviceOrientation();
+  const { width } = Dimensions.get("window");
+  let screenWidth = width * 0.05;
 
   console.log("Device orientation ", { deviceOrientation });
-  console.log(Dimensions.get("screen"));
+  console.log("Window Size is ", width);
+  console.log("ScreenWidth Size is ", screenWidth);
+
+  const redBackgroundStyles = { backgroundColor: "red" };
+
+  const styles = StyleSheet.create({
+    viewContainer: {
+      height: 80,
+      width: "50%",
+    },
+
+    paddingTop: {
+      paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    },
+    textStyles: {
+      color: "black",
+      fontSize: screenWidth / 1.5,
+      fontWeight: "bold",
+      flexShrink: 1,
+    },
+
+    colorStyles: {
+      color: "red",
+      textShadowColor: "black",
+      backgroundColor: "pink",
+    },
+  });
 
   return (
     <View
@@ -38,6 +66,7 @@ export default function App() {
           backgroundColor: "tomato",
           height: 120,
           width: 120,
+          top: -35,
         }}
       />
       <View
@@ -45,6 +74,7 @@ export default function App() {
           backgroundColor: "gold",
           height: 120,
           width: 120,
+          top: 35,
         }}
       />
       <View
@@ -54,7 +84,12 @@ export default function App() {
           width: 420,
           flexShrink: 1,
         }}
-      />
+      >
+        <Text style={styles.textStyles}>
+          Lorem consequat dolore quis officia aliquip. Aliquip deserunt nulla ut
+          cillum excepteur aliquip esse proident mollit sunt. Veniam enim anim
+        </Text>
+      </View>
       {/* <View
         style={{
           backgroundColor: "#e50aff",
@@ -72,22 +107,3 @@ export default function App() {
     </View>
   );
 }
-
-const redBackgroundStyles = { backgroundColor: "red" };
-
-const styles = StyleSheet.create({
-  viewContainer: {
-    height: 80,
-    width: "50%",
-  },
-
-  paddingTop: {
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-  },
-
-  colorStyles: {
-    color: "red",
-    textShadowColor: "black",
-    backgroundColor: "pink",
-  },
-});
