@@ -5,13 +5,14 @@ import {
   View,
   Image,
   TouchableHighlight,
+  Button,
 } from "react-native";
 
 export default function App() {
   console.log("App Executed");
 
-  const handlePress = () => {
-    console.log("image pressed");
+  const handlePress = (prop) => {
+    console.log("image pressed ");
   };
 
   return (
@@ -35,6 +36,8 @@ export default function App() {
           }}
         />
       </TouchableHighlight>
+
+      <Button title="The Button" onPress={handlePress} color="orange" />
     </View>
   );
 }
