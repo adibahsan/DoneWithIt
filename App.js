@@ -28,25 +28,31 @@ export default function App() {
       style={{
         backgroundColor: "white",
         flex: 1,
-        flexDirection: "column-reverse",
+        flexDirection: "row-reverse",
+        justifyContent: "center", // primary
+        alignItems: "center", //secondary axis
       }}
     >
       <View
         style={{
-          backgroundColor: "red",
-          flex: 2,
+          backgroundColor: "tomato",
+          height: 80,
+          width: 100,
+          alignSelf: "flex-end",
         }}
       />
       <View
         style={{
           backgroundColor: "gold",
-          flex: 1,
+          height: 140,
+          width: 80,
         }}
       />
       <View
         style={{
-          backgroundColor: "blue",
-          flex: 1,
+          backgroundColor: "#e50aff",
+          height: 400,
+          width: 80,
         }}
       />
     </View>
@@ -57,7 +63,6 @@ const redBackgroundStyles = { backgroundColor: "red" };
 
 const styles = StyleSheet.create({
   viewContainer: {
-    backgroundColor: "#db09f4",
     height: 80,
     width: "50%",
   },
