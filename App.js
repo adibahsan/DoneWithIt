@@ -24,9 +24,31 @@ export default function App() {
   console.log(Dimensions.get("screen"));
 
   return (
-    <SafeAreaView style={styles.paddingTop}>
-      <View style={styles.viewContainer}></View>
-    </SafeAreaView>
+    <View
+      style={{
+        backgroundColor: "white",
+        flex: 1,
+      }}
+    >
+      <View
+        style={{
+          backgroundColor: "red",
+          flex: 2,
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "gold",
+          flex: 1,
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "blue",
+          flex: 1,
+        }}
+      />
+    </View>
   );
 }
 
