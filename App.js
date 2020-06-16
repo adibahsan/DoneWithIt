@@ -29,30 +29,44 @@ export default function App() {
         backgroundColor: "white",
         flex: 1,
         flexDirection: "row-reverse",
-        justifyContent: "center", // primary
-        alignItems: "center", //secondary axis
+        justifyContent: "center",
+        flexWrap: "wrap",
+        alignContent: "center",
       }}
     >
       <View
         style={{
           backgroundColor: "tomato",
-          height: 80,
-          width: 100,
-          alignSelf: "flex-end",
+          height: 120,
+          width: 120,
         }}
       />
       <View
         style={{
           backgroundColor: "gold",
-          height: 140,
-          width: 80,
+          height: 120,
+          width: 120,
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "#b22222",
+          height: 120,
+          width: 120,
         }}
       />
       <View
         style={{
           backgroundColor: "#e50aff",
-          height: 400,
-          width: 80,
+          height: 120,
+          width: 120,
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "#7cfc00",
+          height: 120,
+          width: 120,
         }}
       />
     </View>
