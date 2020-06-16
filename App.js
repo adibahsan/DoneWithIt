@@ -22,8 +22,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "dodgerblue",
     alignItems: "center",
     justifyContent: "center",
+  },
+
+  colorStyles: {
+    color: "#fff",
+    textShadowColor: "black",
   },
 });
