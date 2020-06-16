@@ -30,8 +30,7 @@ export default function App() {
         flex: 1,
         flexDirection: "row-reverse",
         justifyContent: "center",
-        flexWrap: "wrap",
-        alignContent: "center",
+        alignItems: "center",
       }}
     >
       <View
@@ -52,10 +51,11 @@ export default function App() {
         style={{
           backgroundColor: "#b22222",
           height: 120,
-          width: 120,
+          width: 420,
+          flexShrink: 1,
         }}
       />
-      <View
+      {/* <View
         style={{
           backgroundColor: "#e50aff",
           height: 120,
@@ -68,7 +68,7 @@ export default function App() {
           height: 120,
           width: 120,
         }}
-      />
+      /> */}
     </View>
   );
 }
