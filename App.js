@@ -7,17 +7,20 @@ import {
   TouchableHighlight,
   Button,
   Alert,
+  Platform,
+  StatusBar,
+  SafeAreaView,
 } from "react-native";
 
 export default function App() {
-  console.log("App Executed");
+  console.log("App Executed with StatusBar", StatusBar.currentHeight);
 
   const handlePress = (prop) => {
     console.log("image pressed ");
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text numberOfLines={2} style={(styles.colorStyles, redBackgroundStyles)}>
         Culpa irure excepteur sint occaecat consectetur excepteur Lorem
         excepteur fugiat reprehenderit ipsum. Lorem adipisicing fugiat laboris
@@ -48,7 +51,7 @@ export default function App() {
         }
         color="orange"
       />
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -58,8 +61,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
 
   colorStyles: {
