@@ -16,14 +16,15 @@ import {
   useDimensions,
   useDeviceOrientation,
 } from "@react-native-community/hooks";
+import RF, { RFValue, RFPercentage } from "react-native-responsive-fontsize";
 
 export default function App() {
   const deviceOrientation = useDeviceOrientation();
-  const { width } = Dimensions.get("window");
+  const { width, height } = Dimensions.get("window");
   let screenWidth = width * 0.05;
 
   console.log("Device orientation ", { deviceOrientation });
-  console.log("Window Size is ", width);
+  console.log("Window Size is ", width, "height is ", height);
   console.log("ScreenWidth Size is ", screenWidth);
 
   const redBackgroundStyles = { backgroundColor: "red" };
@@ -39,8 +40,10 @@ export default function App() {
     },
     textStyles: {
       color: "black",
-      fontSize: screenWidth / 1.5,
+      fontSize: RFValue(20, height),
+      textAlign: "justify",
       fontWeight: "bold",
+      padding: 10,
       flexShrink: 1,
     },
 
@@ -63,26 +66,10 @@ export default function App() {
     >
       <View
         style={{
-          backgroundColor: "tomato",
-          height: 120,
-          width: 120,
-          top: -35,
-        }}
-      />
-      <View
-        style={{
-          backgroundColor: "gold",
-          height: 120,
-          width: 120,
-          top: 35,
-        }}
-      />
-      <View
-        style={{
           backgroundColor: "#b22222",
           height: 120,
-          width: 420,
-          flexShrink: 1,
+          width: 120,
+          flex: 1,
         }}
       >
         <Text style={styles.textStyles}>
@@ -90,20 +77,6 @@ export default function App() {
           cillum excepteur aliquip esse proident mollit sunt. Veniam enim anim
         </Text>
       </View>
-      {/* <View
-        style={{
-          backgroundColor: "#e50aff",
-          height: 120,
-          width: 120,
-        }}
-      />
-      <View
-        style={{
-          backgroundColor: "#7cfc00",
-          height: 120,
-          width: 120,
-        }}
-      /> */}
     </View>
   );
 }
